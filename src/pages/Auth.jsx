@@ -12,14 +12,14 @@ const Auth = () => {
             <p className="text-md text-gray-600 font-medium text-center ">
               Inicia Sesion con tu cuenta y si no tienes una, Regístrate
             </p>
-          </div>
+      </div>
   
           <div className="w-full flex flex-col justify-center items-center gap-3">
-            <Link to="login" className="w-full bg-indigo-600 rounded-xl text-center text-2xl text-white font-bold px-5 py-2 hover:bg-indigo-900 transition-colors">
+            <Link className="w-full bg-indigo-600 rounded-xl text-center text-2xl text-white font-bold px-5 py-2 hover:bg-indigo-900 transition-colors">
               Iniciar Sesion
             </Link>
   
-            <Link className="w-full bg-transparent border border-indigo-600 rounded-xl text-center text-2xl text-indigo-600 font-bold px-5 py-2 hover:bg-indigo-900 hover:text-white transition-colors">
+            <Link to="/auth/signin" className="w-full bg-transparent border border-indigo-600 rounded-xl text-center text-2xl text-indigo-600 font-bold px-5 py-2 hover:bg-indigo-900 hover:text-white transition-colors">
               Regístrate
             </Link>
           </div>

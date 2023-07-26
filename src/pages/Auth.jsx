@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   return (
@@ -15,7 +15,7 @@ const Auth = () => {
       </div>
   
           <div className="w-full flex flex-col justify-center items-center gap-3">
-            <Link className="w-full bg-indigo-600 rounded-xl text-center text-2xl text-white font-bold px-5 py-2 hover:bg-indigo-900 transition-colors">
+            <Link to="/auth/login" className="w-full bg-indigo-600 rounded-xl text-center text-2xl text-white font-bold px-5 py-2 hover:bg-indigo-900 transition-colors">
               Iniciar Sesion
             </Link>
   

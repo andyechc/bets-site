@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Auth from "./pages/Auth";
 import Signin from "./pages/Signin";
+import Login from "./pages/Login";
 import Error404 from "./pages/Error404";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         
         <Route path="/auth" element={<Auth />}/>
         <Route path="/auth/signin" element={<Signin setUser={setUser}/>}/>
+        <Route path="/auth/login" element={<Login user={user}/>}/>
         
         <Route path="*" element={<Error404/>} />
       </Routes>

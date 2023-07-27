@@ -34,7 +34,7 @@ const Signin = ({ setUser }) => {
     e.preventDefault()
     
     if (formData.username && formData.password) {
-      setUser(formData);
+      setUser({...formData, img: {}});
       navigate("/auth");
     }
     else{

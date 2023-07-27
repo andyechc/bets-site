@@ -7,18 +7,43 @@ import Signin from "./pages/Signin";
 import Login from "./pages/Login";
 import Error404 from "./pages/Error404";
 
+const initialUserState = { username: "user", password: "12345678" };
+
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
+
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Home user={user} />} />
-        
-        <Route path="/auth" element={<Auth />}/>
-        <Route path="/auth/signin" element={<Signin setUser={setUser}/>}/>
-        <Route path="/auth/login" element={<Login user={user}/>}/>
-        
-        <Route path="*" element={<Error404/>} />
+        <Route
+          path="/"
+          element={<Home user={user} />}
+          lazy={() => import("./pages/Home")}
+        />
+
+        {/*<Route
+          path="/profile"
+          element={<Profile user={user} setUser={setUser} />}
+        />*/}
+
+        <Route
+          path="/auth"
+          element={<Auth />}
+          lazy={() => import("./pages/Auth")}
+        />
+        <Route
+          path="/auth/signin"
+          element={
+            <Signin setUser={setUser} lazy={() => import("./pages/Signin")} />
+          }
+        />
+        <Route
+          path="/auth/login"
+          element={<Login user={user} />}
+          lazy={() => import("./pages/Login")}
+        />
+
+        <Route path="*" element={<Error404 />} lazy={()=>import("./pages/Error404")}  />
       </Routes>
     </HashRouter>
   );

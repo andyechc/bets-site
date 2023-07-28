@@ -10,6 +10,7 @@ const Header = ({user}) => {
           to="/profile"
           className="flex justify-center items-center gap-2 text-md font-bold text-gray-800"
         >
+          {user.username}
           <img
             className="w-[30px] object-cover aspect-square rounded-full"
             src={user && user.img}

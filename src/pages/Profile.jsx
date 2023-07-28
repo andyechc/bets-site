@@ -15,8 +15,8 @@ const Profile = ({ user, setUser }) => {
   }
   
   const handleEditName = () => {
-    if (formData.username === ""){
-      setError({...error, username:"No puede dejar el nombre de usuario vacio."})
+    if (!formData.username){
+      null
     }
     else {
       setUser({...user, username: formData.username})
@@ -59,7 +59,7 @@ const Profile = ({ user, setUser }) => {
               : 
               <>
                 {user.username} 
-                <button onClick={handleEditName}><AiFillEdit className="text-lg text-gray-400"/></button>
+                <button onClick={()=>setShowEditName(!showEditName)}><AiFillEdit className="text-lg text-gray-400"/></button>
               </>
             }
           </label>

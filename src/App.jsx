@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { HashRouter, Routes, Route } from "react-router-dom"
+import profile from '/src/assets/profile.png'
 
 import Home from "./pages/Home"
 import Auth from "./pages/Auth"
@@ -8,7 +9,7 @@ import Login from "./pages/Login"
 import Error404 from "./pages/Error404"
 import Profile from "./pages/Profile"
 
-const initialUserState = { username: "user", password: "12345678", img:"/src/assets/profile.png" }
+const initialUserState = { username: "user", password: "12345678", img:`${profile}` }
 
 function App() {
   const [user, setUser] = useState(initialUserState)

@@ -2,7 +2,7 @@ import { useNavigate }  from "react-router-dom";
 import FormAuth from "../components/FormAuth";
 import useDataForm from "../hooks/useDataForm";
 
-import profile from "../assets/profile.png";
+import profile from "/src/assets/profile.png";
 
 const Signin = ({ setUser }) => {
   const {handleChange, error, setError, formData} = useDataForm()

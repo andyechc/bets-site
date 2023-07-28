@@ -1,7 +1,7 @@
 echo "Que dependencias deceas instalar?:"
 read dependency
 
-npm install "$dependency"
-Dependencia instalada correctamente!!
-
+npm install $dependency
+echo "Dependencia instalada correctamente!!"
+echo "-_-"
 fi

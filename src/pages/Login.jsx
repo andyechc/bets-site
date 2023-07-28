@@ -1,41 +1,10 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FormAuth from "../components/FormAuth";
+import useDataForm from "../hooks/useDataForm";
 
 const Login = ({ user }) => {
-  const [formData, setFormData] = useState({})
-  const [error, setError] = useState({})
+  const {handleChange, setError, error, formData} = useDataForm()
   const navigate = useNavigate()
-
-  // console.log(user, formData)
-
-  const handleChange = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-
-    if (value === "") {
-      setFormData((prev) => ({ ...prev, [name]: "" }));
-      setError((prev) => ({
-        ...prev,
-        [name]: "Debe de rellenar el campo: " + name,
-      }));
-    } else if (name === "username" && value.length > 10) {
-      setFormData((prev) => ({ ...prev, [name]: "" }));
-      setError((prev) => ({
-        ...prev,
-        [name]: "Este campo no debe tener mas de 10 caracteres.",
-      }));
-    } else if (name === "password" && value.length < 8) {
-      setFormData((prev) => ({ ...prev, [name]: "" }));
-      setError((prev) => ({
-        ...prev,
-        [name]: "Este campo debe tener no menos 8 caracteres.",
-      }));
-    } else {
-      setFormData((prev) => ({ ...prev, [name]: value }));
-      setError((prev) => ({ ...prev, [name]: "" }));
-    }
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,8 +23,8 @@ const Login = ({ user }) => {
       }
     } else {
       setError((prev) => ({
-        username: "Rellena los Campos",
-        password: "Rellena los Campos",
+        username: "El Nombre de Usuario o la Contraseña son incorrectos.",
+        password: "El Nombre de Usuario o la Contraseña son incorrectos.",
       }));
     }
   };

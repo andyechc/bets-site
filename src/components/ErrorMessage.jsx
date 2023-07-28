@@ -1,6 +1,6 @@
-const ErrorMessage = ({error}) => {
+const ErrorMessage = ({error, className}) => {
   return (
-    <small className="text-md text-red-500 font-light">{error}</small>
+    <small className={`text-md text-red-500 font-light ${className}`}>{error}</small>
   )
 }
 

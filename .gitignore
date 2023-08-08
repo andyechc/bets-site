@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 dependency.sh
+catsi.sh
 
 # Editor directories and files
 .vscode/*

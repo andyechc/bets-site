@@ -45,7 +45,11 @@ function App() {
           lazy={() => import("./pages/Login")}
         />
 
-        <Route path="*" element={<Error404 />} lazy={()=>import("./pages/Error404")}  />
+        <Route 
+          path="*" 
+          element={<Error404 />} 
+          lazy={()=>import("./pages/Error404")}  
+        />
       </Routes>
     </HashRouter>
   );

@@ -12,7 +12,7 @@ import Profile from "./pages/Profile"
 const initialUserState = { username: "user", password: "12345678", img:`${profile}` }
 
 function App() {
-  const [user, setUser] = useState(initialUserState)
+  const [user, setUser] = useState()
 
   return (
     <HashRouter>

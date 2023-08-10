@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useNavigate, Outlet } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import  Header  from "../components/Header"
 
 const Home = ({ user }) => {

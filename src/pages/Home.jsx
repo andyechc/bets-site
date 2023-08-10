@@ -1,13 +1,8 @@
-import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
 import  Header  from "../components/Header"
+import useUserIsLoged from "../hooks/useUserIsLoged"
 
 const Home = ({ user }) => {
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    !user && navigate("/auth")
-  }, [user])
+  useUserIsLoged(user)
 
   return (
     <section>
